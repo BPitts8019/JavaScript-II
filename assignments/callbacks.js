@@ -59,9 +59,27 @@ multiplyNums(2, 65, sum => {
 });
 
 function contains(item, list, cb) {
-  // contains checks if an item is present inside of the given array/list.
-  // Pass true to the callback if it is, otherwise pass false.
+   // contains checks if an item is present inside of the given array/list.
+   // Pass true to the callback if it is, otherwise pass false.
+   let isContained = false;
+
+   for (let idx = 0; idx < list.length; idx++) {
+      if (list[idx] === item) {
+         isContained = true;
+         break;
+      }
+   }
+
+   cb(isContained);
+   // cb(list.includes(item));
 }
+//['Pencil', 'Notebook', 'yo-yo', 'Gum']
+contains("blah", items, isContained => {
+   console.log("=== Items contains \"blah\"? ===\n", isContained);
+});
+contains("Notebook", items, isContained => {
+   console.log("=== Items contains \"Notebook\"? ===\n", isContained);
+});
 
 /* STRETCH PROBLEM */
 
