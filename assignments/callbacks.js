@@ -84,7 +84,36 @@ contains("Notebook", items, isContained => {
 /* STRETCH PROBLEM */
 
 function removeDuplicates(array, cb) {
-  // removeDuplicates removes all duplicate values from the given array.
-  // Pass the duplicate free array to the callback function.
-  // Do not mutate the original array.
+   // removeDuplicates removes all duplicate values from the given array.
+   // Pass the duplicate free array to the callback function.
+   // Do not mutate the original array.
+   let noDupes = array.reduce((acc, item) => {
+      //=== Method 1 ===//
+      let isContained = false;
+
+      for (let idx = 0; idx < acc.length; idx++) {
+         if (acc[idx] === item) {
+            isContained = true;
+            break;
+         }
+      }
+      if (!isContained) acc.push(item);
+      
+      //=== Method 2 ===//
+      // contains(item, acc, isContained => {
+      //    if (!isContained) acc.push(item);
+      // });
+
+      //=== Method 3 ===//
+      // if (!acc.includes(item)) acc.push(item);
+
+      return acc;
+   }, []);
+
+   cb(noDupes);
 }
+
+let displayArr = fixedArray => { console.log(fixedArray); };
+removeDuplicates([1, 2, 2, 3, 4, 5], displayArr);
+removeDuplicates(["hello", "my", "name", "hello", "is", "hello", "Freddy!"], displayArr);
+removeDuplicates(["This", "is", "a", "number: ", 10], displayArr);
