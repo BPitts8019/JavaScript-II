@@ -52,7 +52,11 @@ sumNums(10, 4, sum => {
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  cb(x * y);
 }
+multiplyNums(2, 65, sum => {
+   console.log("=== Multiply Nums (2 * 65) ===\n", sum);
+});
 
 function contains(item, list, cb) {
   // contains checks if an item is present inside of the given array/list.
