@@ -44,7 +44,11 @@ last(items, lastItem => {
 
 function sumNums(x, y, cb) {
    // sumNums adds two numbers (x, y) and passes the result to the callback.
+   cb(x + y);
 }
+sumNums(10, 4, sum => {
+   console.log("=== Sum Nums (10 + 4) ===\n", sum);
+});
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
