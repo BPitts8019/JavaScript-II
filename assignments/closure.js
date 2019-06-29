@@ -3,7 +3,7 @@ console.log("==== Challenge 1: Write your own closure ====");
 // Write a simple closure of your own creation.  Keep it simple!
 const trippleIt = (inputNum=1) => {
    const innerFunc = () => {
-      let hiddenVal = 3;
+      const hiddenVal = 3;
       return inputNum * hiddenVal;
    }
    
