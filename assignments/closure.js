@@ -1,6 +1,20 @@
 // ==== Challenge 1: Write your own closure ====
 // Write a simple closure of your own creation.  Keep it simple!
+const trippleIt = (inputNum=1) => {
+   const innerFunc = () => {
+      let hiddenVal = 3;
+      return inputNum * hiddenVal;
+   }
+   
+    //This will throw an error
+   // console.log("Hidden Value: ", hiddenVal);
 
+   return innerFunc();
+};
+
+console.log(trippleIt());   //3
+console.log(trippleIt(3));  //9
+console.log(trippleIt(15)); //45
 
 /* STRETCH PROBLEMS, Do not attempt until you have completed all previous tasks for today's project files */
 
