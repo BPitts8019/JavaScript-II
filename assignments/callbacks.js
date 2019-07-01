@@ -44,18 +44,20 @@ last(items, lastItem => {
 
 function sumNums(x, y, cb) {
    // sumNums adds two numbers (x, y) and passes the result to the callback.
+   console.log(`=== Sum Nums (${x} * ${y}) ===`);
    cb(x + y);
 }
 sumNums(10, 4, sum => {
-   console.log("=== Sum Nums (10 + 4) ===\n", sum);
+   console.log(sum);
 });
 
 function multiplyNums(x, y, cb) {
   // multiplyNums multiplies two numbers and passes the result to the callback.
+  console.log(`=== Multiply Nums (${x} * ${y}) ===`);
   cb(x * y);
 }
-multiplyNums(2, 65, sum => {
-   console.log("=== Multiply Nums (2 * 65) ===\n", sum);
+multiplyNums(2, 65, product => {
+   console.log(product);
 });
 
 function contains(item, list, cb) {
@@ -70,19 +72,20 @@ function contains(item, list, cb) {
       }
    }
 
+   console.log(`=== Array contains "${item}"? ===`);
    cb(isContained);
    // cb(list.includes(item));
 }
 //['Pencil', 'Notebook', 'yo-yo', 'Gum']
 contains("blah", items, isContained => {
-   console.log("=== Items contains \"blah\"? ===\n", isContained);
+   console.log(isContained);
 });
 contains("Notebook", items, isContained => {
-   console.log("=== Items contains \"Notebook\"? ===\n", isContained);
+   console.log(isContained);
 });
 
 /* STRETCH PROBLEM */
-
+console.log("\n\n||=== STRETCH PROBLEM ===||",);
 function removeDuplicates(array, cb) {
    // removeDuplicates removes all duplicate values from the given array.
    // Pass the duplicate free array to the callback function.
@@ -110,10 +113,11 @@ function removeDuplicates(array, cb) {
       return acc;
    }, []);
 
+   console.log(`--- removeDuplicates: ${JSON.stringify(array)} ---`);
    cb(noDupes);
 }
 
-let displayArr = fixedArray => { console.log(fixedArray); };
+const displayArr = fixedArray => { console.log(JSON.stringify(fixedArray)+ "\n"); };
 removeDuplicates([1, 2, 2, 3, 4, 5], displayArr);
 removeDuplicates(["hello", "my", "name", "hello", "is", "hello", "Freddy!"], displayArr);
 removeDuplicates(["This", "is", "a", "number: ", 10], displayArr);
