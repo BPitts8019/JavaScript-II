@@ -24,7 +24,7 @@ const items = ['Pencil', 'Notebook', 'yo-yo', 'Gum'];
 
 */
 
-console.log(JSON.stringify(items));
+console.log("\n\n||=== Callbacks ===||\n", JSON.stringify(items));
 
 function getLength(arr, cb) {
    // getLength passes the length of the array into the callback.
@@ -85,7 +85,7 @@ contains("Notebook", items, isContained => {
 });
 
 /* STRETCH PROBLEM */
-console.log("\n\n||=== STRETCH PROBLEM ===||",);
+console.log("\n\n||=== Callbacks STRETCH PROBLEM ===||",);
 function removeDuplicates(array, cb) {
    // removeDuplicates removes all duplicate values from the given array.
    // Pass the duplicate free array to the callback function.
